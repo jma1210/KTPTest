@@ -72,7 +72,7 @@ def perspTransform(cnts,og):
 
 
 if __name__ == "__main__":
-    for i in range(len(os.listdir(os.getcwd()))):
+    for i in range(len(os.listdir(os.getcwd()))-1):
         #Iterate over all files in specified dir
             original = chooseImage(i)
             toBeShown = filterBlue(original)
