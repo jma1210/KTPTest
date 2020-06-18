@@ -5,6 +5,8 @@ import imutils
 import os
 import pytesseract
 
+pytesseract.pytesseract.tesseract_cmd = r'C:\Users\Muhammad Reza\AppData\Local\Tesseract-OCR\tesseract.exe'
+
 def sortRectPoints(sqr):
     # Helper function to sort the points, 1 2 3 4 being top left, top right, bot right, and bot left
     pts = sqr.reshape(4,2)
@@ -87,7 +89,8 @@ if __name__ == "__main__":
 
             #Show images
             cv2.imshow('bounded',bounded)
-            cv2.imshow('img',toBeShown)
+            # cv2.imshow('img',toBeShown)
             cv2.imshow('Perspective Transformed', ptimg)
+            print(pytesseract.image_to_string(ptimg))
             cv2.waitKey(0)
             cv2.destroyAllWindows()
